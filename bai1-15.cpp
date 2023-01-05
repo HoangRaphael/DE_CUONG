@@ -13,17 +13,22 @@ int main() {
     cout<<"Nhap a["<<i<<"]: ";
     cin>>a[i];
    }
-
-   int sum=0;
-   p=a;
-   cout<<*p<<endl;
-
-   for(int i=0;i<n;i++){
-        sum = sum + *p;
-        p++;
-        cout<<"'"<<a[i]<<"'";
-
- //       cout<<*p<<" ";
+   float sumc=0, countc=0;;
+  for(int j=0;j<n;j++){
+   if(j%2==0){
+      countc++;
+      int *pc=&a[j];
+      sumc = sumc + *pc;
    }
-   cout<<"Gia tri: "<<sum;
+  }
+  float suml=0, countl=0;
+  for(int j=0;j<n;j++){
+   if(j%2==1){
+       countl++;
+      int *pl=&a[j];
+      suml = suml + *pl;
+   }
+  }
+  cout<<"TB Chan: "<<sumc/countc<<endl;
+  cout<<"TB Le: "<<suml/countl<<endl;
 }
